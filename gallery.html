@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picverse - Gallery</title>
+    <link rel="shortcut icon" href="assets/images/Additional Images/Logos.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/Additional Images/Logos.png" alt="Picverse Logo" class="logo-img">
+                <span>Where Every Stroke Tells a Story</span>
+            </div>
+            <button class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="submission.html">Submission</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="gallery-page-wrapper">
+           <div class="gallery-header-controls">
+                    <h1>Our Gallery</h1>
+                    <div class="filter-controls">
+                        <div class="dropdown-container">
+                            <select id="tag-dropdown">
+                                <option value="games">Select Tag</option> 
+                                <option value="games">Games</option>    
+                                <option value="anime">Anime</option>   
+                                <option value="animal">Animal</option>  
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="tag-buttons">
+                            <button class="tag-button active" data-tag="games">Games</button>
+                            <button class="tag-button" data-tag="anime">Anime</button>
+                            <button class="tag-button" data-tag="animal">Animal</button>
+                        </div>
+                    </div>
+                </div>
+            <div id="gallery-grid" class="gallery-grid-container">
+                </div>
+        </div>
+
+        <div id="image-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img id="modal-image" src="" alt="Modal Image">
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-artist"></p>
+                    <div id="modal-tags" class="gallery-item-tags-modal">
+                        </div>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Picverse. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/navbar.js"></script>
+</body>
+</html>

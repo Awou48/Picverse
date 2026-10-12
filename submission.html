@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picverse - Submission</title>
+    <link rel="shortcut icon" href="assets/images/Additional Images/Logos.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/submission.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/Additional Images/Logos.png" alt="Picverse Logo" class="logo-img">
+                <span>Where Ever Stroke Tells a Story</span>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="submission.html">Submission</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="submission-container">
+            <h1>Submit Your Artwork</h1>
+            <form id="submissionForm" onsubmit="return validateForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                        <div class="error-message" id="titleError"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <div class="error-message" id="descriptionError"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tags">Tags (comma separated):</label>
+                        <input type="text" id="tags" name="tags" required>
+                        <div class="error-message" id="tagsError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Is your submission AI-generated?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="yes" name="original" value="yes" required>
+                                <label for="yes">Yes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="no" name="original" value="no">
+                                <label for="no">No</label>
+                            </div>
+                        </div>
+                        <div class="error-message" id="originalError"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="artwork">Upload Your Artwork:</label>
+                    <div class="file-upload-container">
+                        <input type="file" id="artwork" name="artwork" accept="image/*" required>
+                        <div class="file-upload-info">
+                            <span class="file-name">No file chosen</span>
+                            <span class="file-size"></span>
+                        </div>
+                        <div class="file-preview"></div>
+                    </div>
+                    <div class="error-message" id="artworkError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Artwork</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Picverse. All rights reserved.</p>
+    </footer>
+    <script src="assets/js/submission.js"></script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/navbar.js"></script>
+</body>
+</html> 

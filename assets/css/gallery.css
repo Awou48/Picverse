@@ -1,0 +1,199 @@
+.gallery-page-wrapper {
+    margin-top: calc(70px + 1rem); 
+    margin-bottom: 2rem; 
+    padding: 0 2rem; 
+    max-width: 1600px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-header-controls {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 2.5rem;
+}
+
+
+.gallery-page-wrapper h1 { 
+    color: #fff;
+    text-align: center; 
+    font-size: 5.5rem;  
+    font-weight: 900; 
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    margin: 0 0 2rem 0; 
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+#tag-dropdown {
+    background-color: #7B4E9A; 
+    color: #f0f0f0;
+    padding: 0.8rem 2.5rem 0.8rem 1.3rem; 
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.95rem; 
+    font-weight: 500;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+#tag-dropdown:hover {
+    background-color: #8E44AD;
+    border-color: rgba(255,255,255,0.3);
+}
+.dropdown-container .fa-chevron-down {
+    position: absolute;
+    right: 1.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.7);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+.tag-buttons .tag-button {
+    background-color: rgba(123, 78, 154, 0.6); 
+    color: #e0e0e0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid transparent; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.tag-buttons .tag-button:hover {
+    background-color: #8E44AD;
+    color: #fff;
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.tag-buttons .tag-button.active {
+    background-color: #FAB623; 
+    color: #311337; 
+    font-weight: 600;
+    border-color: transparent;
+    box-shadow: 0 3px 8px rgba(250, 182, 35, 0.3);
+}
+
+.gallery-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem; 
+}
+
+.gallery-item {
+    background-color: rgba(45, 30, 60, 0.85); 
+    border-radius: 15px; 
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column; 
+    aspect-ratio: 4 / 3.2; 
+}
+.gallery-item:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-item-image-wrapper { 
+    width: 100%;
+    flex-grow: 1; 
+    overflow: hidden;
+    position: relative; 
+}
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.03); 
+}
+
+.gallery-item-info { 
+    padding: 1rem 1.25rem; 
+    color: #fff;
+    text-align: left; 
+    background-color: rgba(35, 20, 50, 0.9); 
+    flex-shrink: 0; 
+}
+
+.gallery-item-info h3 { 
+    font-size: 1.35rem; 
+    color: #f5f5f5;
+    margin: 0 0 0.2rem 0;
+    font-weight: 700; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.gallery-item-info p { 
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal { display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 50px; }
+.modal-content { position: relative; background-color: #5D4037; margin: auto; padding: 0; border: 1px solid #795548; width: 90%; max-width: 700px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); animation-name: animatetop; animation-duration: 0.4s; border-radius: 12px; overflow: hidden; }
+@keyframes animatetop { from {top: -300px; opacity: 0} to {top: 0; opacity: 1} }
+.close-button { color: #FFCC80; position: absolute; top: 10px; right: 20px; font-size: 30px; font-weight: bold; transition: 0.3s; }
+.close-button:hover, .close-button:focus { color: #FFE0B2; text-decoration: none; cursor: pointer; }
+#modal-image { width: 100%; height: auto; max-height: 60vh; object-fit: contain; display: block; background-color: #3E2723; }
+.modal-info { padding: 1.5rem 2rem; color: #FFDAB9; }
+#modal-title { font-size: 1.8rem; margin: 0 0 0.5rem 0; color: #FFFFFF; }
+#modal-artist { font-size: 1rem; color: #FFCC80; margin: 0 0 1rem 0; }
+#modal-tags { margin-bottom: 1rem; }
+#modal-tags .tag, .gallery-item-tags-modal .tag { background: rgba(255, 224, 178, 0.2); color: #FFCC80; border: 1px solid rgba(255, 204, 128, 0.4); padding: 0.25rem 0.7rem; border-radius: 15px; font-size: 0.75rem; margin-right: 0.5rem; display: inline-block;}
+#modal-description { font-size: 0.95rem; line-height: 1.6; color: #FFE0B2; }
+
+@media (max-width: 1200px) {
+    .gallery-grid-container { grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); }
+}
+@media (max-width: 992px) {
+    .gallery-grid-container { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .gallery-page-wrapper h1 { font-size: 3.5rem; }
+}
+@media (max-width: 768px) {
+    .gallery-page-wrapper { margin-top: calc(60px + 1rem); padding: 0 1rem; }
+    .gallery-header-controls { align-items: center; }
+    .filter-controls { flex-direction: column; align-items: stretch; width: 100%; max-width: 350px; margin-left:auto; margin-right:auto;}
+    .tag-buttons { display: flex; justify-content: space-around; width: 100%; }
+    .tag-buttons .tag-button { flex-grow: 1; text-align: center; margin: 0 0.2rem; }
+    .gallery-page-wrapper h1 { font-size: 2.5rem; text-align: center; margin-bottom: 1.5rem;}
+    .gallery-grid-container { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .gallery-item { aspect-ratio: 4 / 3.5; } 
+    .gallery-item-info h3 { font-size: 1rem; }
+    .gallery-item-info p { font-size: 0.75rem; }
+}
+@media (max-width: 480px) {
+    .gallery-grid-container { grid-template-columns: 1fr; }
+    .gallery-item { aspect-ratio: 4 / 3.2; }
+    .gallery-page-wrapper h1 { font-size: 2rem; }
+    #tag-dropdown, .tag-buttons .tag-button { font-size: 0.85rem; padding: 0.6rem 1rem; }
+    #tag-dropdown { padding-right: 2rem; } 
+    .dropdown-container .fa-chevron-down { right: 1rem; }
+}
